@@ -1,2 +1,2 @@
-# Netsec
+# Network Security
 Meeting 1: 
