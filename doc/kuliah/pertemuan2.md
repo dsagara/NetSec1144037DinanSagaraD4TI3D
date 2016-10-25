@@ -1,36 +1,25 @@
-Spatial Data Also known as geospatial data or geographic information it is the data or information that identifies the geographic location of features and boundaries on Earth, such as natural or constructed features, oceans, and more. Spatial data is usually stored as coordinates and topology, and is data that can be mapped.
+Source Code: http://www.aviran.org/arp-poisoning-python-scapy/
 
-Vector Data
+What Is ARP Spoofing?
+ARP spoofing is a type of attack in which a malicious actor sends falsified ARP (Address Resolution Protocol) messages over a local area network. This results in the linking of an attacker’s MAC address with the IP address of a legitimate computer or server on the network. Once the attacker’s MAC address is connected to an authentic IP address, the attacker will begin receiving any data that is intended for that IP address. ARP spoofing can enable malicious parties to intercept, modify or even stop data in-transit. ARP spoofing attacks can only occur on local area networks that utilize the Address Resolution Protocol.
 
-Advantages :
+ARP Spoofing Attacks
+The effects of ARP spoofing attacks can have serious implications for enterprises. In their most basic application, ARP spoofing attacks are used to steal sensitive information. Beyond this, ARP spoofing attacks are often used to facilitate other attacks such as:
 
-	Data can be represented at its original resolution and form without generalization.
-	Graphic output is usually more aesthetically pleasing (traditional cartographic representation);
-	Since most data, e.g. hard copy maps, is in vector form no data conversion is required.
-	Accurate geographic location of data is maintained.
-	Allows for efficient encoding of topology, and as a result more efficient operations that require topological information, e.g. proximity, network analysis.
-Disadvantages:
+Denial-of-service attacks: DoS attacks often leverage ARP spoofing to link multiple IP addresses with a single target’s MAC address. As a result, traffic that is intended for many different IP addresses will be redirected to the target’s MAC address, overloading the target with traffic.
+Session hijacking: Session hijacking attacks can use ARP spoofing to steal session IDs, granting attackers access to private systems and data.
+Man-in-the-middle attacks: MITM attacks can rely on ARP spoofing to intercept and modify traffic between victims.
+ARP Spoofing Tutorial
+ARP spoofing attacks typically follow a similar progression. The steps to an ARP spoofing attack usually include:
 
-	The location of each vertex needs to be stored explicitly.
-	For effective analysis, vector data must be converted into a topological structure. This is often processing intensive and usually requires extensive data cleaning. As well, topology is static, and any updating or editing of the vector data requires re-building of the topology.
-	Algorithms for manipulative and analysis functions are complex and may be processing intensive. Often, this inherently limits the functionality for large data sets, e.g. a large number of features.
-	Continuous data, such as elevation data, is not effectively represented in vector form. Usually substantial data generalization or interpolation is required for these data layers.
-	Spatial analysis and filtering within polygons is impossible
+The attacker opens an ARP spoofing tool and sets the tool’s IP address to match the IP subnet of a target. Examples of popular ARP spoofing software include Arpspoof, Cain & Abel, Arpoison and Ettercap.
+The attacker uses the ARP spoofing tool to scan for the IP and MAC addresses of hosts in the target’s subnet.
+The attacker chooses its target and begins sending ARP packets across the LAN that contain the attacker’s MAC address and the target’s IP address.
+As other hosts on the LAN cache the spoofed ARP packets, data that those hosts send to the victim will go to the attacker instead. From here, the attacker can steal data or launch a more sophisticated follow-up attack.
+ARP Spoofing Detection, Prevention and Protection
+The following methods are recommended measures for detecting, preventing and protecting against ARP spoofing attacks:
 
-
-Raster Data
-
-Advantages :
-
-	The geographic location of each cell is implied by its position in the cell matrix. Accordingly, other than an origin point, e.g. bottom left corner, no geographic coordinates are stored.
-	Due to the nature of the data storage technique data analysis is usually easy to program and quick to perform.
-	The inherent nature of raster maps, e.g. one attribute maps, is ideally suited for mathematical modeling and quantitative analysis.
-	Discrete data, e.g. forestry stands, is accommodated equally well as continuous data, e.g. elevation data, and facilitates the integrating of the two data types.
-	Grid-cell systems are very compatible with raster-based output devices, e.g. electrostatic plotters, graphic terminals.
-Disadvantages:
-
-	The cell size determines the resolution at which the data is represented.;
-	It is especially difficult to adequately represent linear features depending on the cell resolution. Accordingly, network linkages are difficult to establish.
-	Processing of associated attribute data may be cumbersome if large amounts of data exists. Raster maps inherently reflect only one attribute or characteristic for an area.
-	Since most input data is in vector form, data must undergo vector-to-raster conversion. Besides increased processing requirements this may introduce data integrity concerns due to generalization and choice of inappropriate cell size.
-	Most output maps from grid-cell systems do not conform to high-quality cartographic needs.
+Packet filtering: Packet filters inspect packets as they are transmitted across a network. Packet filters are useful in ARP spoofing prevention because they are capable of filtering out and blocking packets with conflicting source address information (packets from outside the network that show source addresses from inside the network and vice-versa).
+Avoid trust relationships: Organizations should develop protocols that rely on trust relationships as little as possible. Trust relationships rely only on IP addresses for authentication, making it significantly easier for attackers to run ARP spoofing attacks when they are in place.
+Use ARP spoofing detection software: There are many programs available that help organizations detect ARP spoofing attacks. These programs work by inspecting and certifying data before it is transmitted and blocking data that appears to be spoofed.
+Use cryptographic network protocols: Transport Layer Security (TLS), Secure Shell (SSH), HTTP Secure (HTTPS) and other secure communications protocols bolster ARP spoofing attack prevention by encrypting data prior to transmission and authenticating data when it is received.
