@@ -3,9 +3,15 @@ A port scan is a series of messages sent by someone attempting to break into a c
 Types of port scans include:
 
 Vanilla - An attempt to connect to all ports (there are 65,536)
+
 Strobe - An attempt to connect to only selected ports (typically, under 20)
+
 Stealth scan - Several techniques for scanning that attempt to prevent the request for connection being logged
+
 FTP Bounce Scan - Attempts that are directed through an File Transfer Protocol server to disguise the cracker's location
+
 Fragmented Packets - Scans by sending packet fragments that can get through simple packet filters in a firewall
+
 UDP - Scans for open User Datagram Protocol ports
+
 Sweep - Scans the same port on a number of computers
